@@ -7,6 +7,7 @@ WNM 608 OL2
 Week 1: 
 
 - https://burucanation.com
+- https://github.com/NinaB-Nation/wnm608_202190_ol2.git
 
 Week 2: 
 
@@ -14,7 +15,7 @@ Week 2:
 
 Week 3: 
 
--PDF
+- PDF
 
 Week 4:
 
@@ -22,4 +23,4 @@ Week 4:
 
 Week 5:
 
-- https://burucanation.com/aau/wnm608_202190_ol2/Buruca-Nation.Nina/styleguide/index.html
+- https://github.com/NinaB-Nation/wnm608_202190_ol2.git
