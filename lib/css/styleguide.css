@@ -7,12 +7,12 @@
 
 
 /* FONT FACE */
-@FONT-FACE {
-	font-family: 'Cream Cake';
-	src: url('fonts/creamCake.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+.handlee-regular {
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 
 :root {
@@ -38,7 +38,7 @@
 body {
 	margin: 0;
 	font-size: 100%;
-	font-family: 'Cream Cake', cursive;
+	font-family: "Handlee", cursive;
 	font-weight: normal;
 }
 
@@ -48,7 +48,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Cream Cake', cursive;
+	font-family: "Handlee", cursive;
 	font-weight: normal;
 }
 
@@ -75,8 +75,8 @@ a:hover {
 
 .display-flex { display:flex; }
 .display-inline-flex { display:inline-flex; }
-.display-flex { display:block; }
-.display-flex { display:inline-block; }
+.display-block { display:block; }
+.display-inline-block { display:inline-block; }
 
 .flex-stretch { flex: 1 1 auto }
 .flex-none { flex: none; }
@@ -92,6 +92,8 @@ a:hover {
 	max-width: 100%;
 	vertical-align: text-bottom;
 }
+.hidden { display:none; }
+
 
 
 /* COMPONENT CLASSES */
@@ -102,85 +104,92 @@ a:hover {
 	margin-bottom: 0;
 	padding-left: 0;
 }
+.nav ul ul {
+	padding-left: 1.5em;
+}
+.nav li {
+	position: relative; 
+}
+.nav a {
+	display: block;
+	padding:0.2em 0.5em;
+}
+.nav ul ul a{
+	padding-left: 1em;
+}
+.nav a:hover {
+	background-color: var(--color-main-medium);
+	color: var(--color-white);
+	text-decoration: none;
+}
+.nav .active a {
+	background-color: var(--color-main-light);
+	color: var(--color-white);
+	text-decoration: none;
+}
 
-	.nav a {
-		display: block;
-		padding:0.2em 0.5em;
-	}
-	.nav a:hover {
-		background-color: var(--color-main-medium);
-		color: var(--color-white);
-		text-decoration: none;
-	}
-	.nav .active a {
-		background-color: var(--color-main-light);
-		color: var(--color-white);
-		text-decoration: none;
-	}
+.nav-material ul,
+.nav-crumbs ul,
+.nav-pills ul,
+.nav-stretch ul,
+.nav-flex ul {
+	display: flex;
+}
 
-	.nav-material ul,
-	.nav-crumbs ul,
-	.nav-pills ul,
-	.nav-stretch ul,
-	.nav-flex ul {
-		display: flex;
-	}
+.nav-material
+.nav-stretch li {
+	flex: 1 1 auto;
+	text-align: center;
+}
 
-	.nav-material
-	.nav-stretch li {
-		flex: 1 1 auto;
-		text-align: center;
-	}
+.nav-pills a {
+	border-radius: 2em;
+	padding: 0.5em 1em;
+}
 
-	.nav-pills a {
-		border-radius: 2em;
-		padding: 0.5em 1em;
-	}
+.nav-crumbs a {
+	display: inline-block;
+}
 
-	.nav-crumbs a {
-		display: inline-block;
-	}
+.nav-crumbs .active a,
+.nav-crumbs a:hover {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: underline;
+}
 
-	.nav-crumbs .active a,
-	.nav-crumbs a:hover {
-		background-color: transparent;
-		color: inherit;
-		text-decoration: underline;
-	}
+.nav-crumbs li:not(:first-child)::before {
+	content:'/';
+}
 
-	.nav-crumbs li:not(:first-child)::before {
-		content:'/';
-	}
+.nav-material a {
+	padding: 0.5em 1em;
+	position: relative;
+}
 
-	.nav-material a {
-		padding: 0.5em 1em;
-		position: relative;
-	}
+.nav-material .active a {
+	background-color: transparent;
+	color: inherit;
+}
 
-	.nav-material .active a {
-		background-color: transparent;
-		color: inherit;
-	}
+.nav-material a:hover {
+	background-color: var(--color-neutral-light);
+	color: inherit;
+}
 
-	.nav-material a:hover {
-		background-color: var(--color-neutral-light);
-		color: inherit;
-	}
+.nav-material a::after {
+	content:'';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background-color: var(--color-main-medium);
+	transition: all 0.3s;	}
 
-	.nav-material a::after {
-		content:'';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 4px;
-		background-color: var(--color-main-medium);
-		transition: all 0.3s;
-	}
-
-	.nav-material .active a::after {
-		height: 4px;
-	}
+.nav-material .active a::after {
+	height: 4px;
+}
 
 
 .navbar {
@@ -388,30 +397,56 @@ a:hover {
 }
 
 /* FORMS */
-
-.form-input {
+.form-control {
+	margin: 1em 0;
+}
+.form-select>select,
+.hotdog input,
+.hotdog,
+.form-button,
+.form-input,
+.form-item {
 	display: inline-block;
 	background-color: transparent;
-	border-width: 0;   
-	border-bottom-width: 0px;
-	padding: 0.2em 0.5em;
-	font-size: inherit;
+	border-width: 0; 
+	font: inherit;
 	-webkit-appearance: none;
 	color: inherit;
 	width: 100%;
-	border-bottom: 1px solid var(--color-neutral-medium);
-	outline: 0;
+	outline: 0; 
+}
+.form-input {
+/*	display: inline-block;
+	background-color: transparent;
+	border-width: 0;   
+	border-bottom-width: 0px;
+	padding: 0.5em 1em;
+	font-size: inherit;
+	-webkit-appearance: none;
+	color: inherit;
+	width: 100%; */
+	border-bottom: 1px solid var(--color-neutral-light);
+	padding: 0.5em 1em;
+	
 }
 .form-input:focus {
-	border-bottom-color:var(--color-main-medium);
+	border-bottom-color:var(--color-main-light);
 }
+.form-label {
+	font-size: 0.8ems;
+ 	color: var(--color-neutral-medium);
+  	display: block;
+  	width: 100%;
+}
+
 	
 /* BUTTONS */
 
 .form-button {
 	display: inline-block;
 	background-color: var(--color-neutral-light);
-	border-width: 0; 
+	padding: 0.5em 1em;
+/*	border-width: 0; 
 	margin-bottom: 10px;  
 	padding: 0.5em 1em;
 	font-family: 'Cream Cake', cursive;
@@ -420,11 +455,11 @@ a:hover {
 	-webkit-appearance: none;
 	color: inherit;
 	width: 100%;
-	outline: 0; 
+	outline: 0; */
 	border-radius: 0.2em;
 	cursor: pointer;
 	text-align: center;
-	text-decoration: none;
+	text-decoration: none; 
 }
 
 .form-button:hover {
@@ -439,6 +474,93 @@ a:hover {
 .form-button a {
 	text-decoration: none;
 }
+
+
+/* HOTDOG */
+
+.hotdog {
+	background-color: var(--color-neutral-light);
+	border-radius: 2em;
+	padding: 0.5em 1.5em;
+	display: flex;
+}
+.hotdog.dark {
+	background-color: var(--color-neutral-dark);
+	color: var(--color-neutral-light);
+}
+.hotdog.light {
+	background-color: var(--color-white);
+	color: var(--color-black);
+}
+
+
+/* SELECT */
+
+.form-select> select {
+	padding: 0.5em 1.3em;
+	background-color: var(--color-neutral-light);
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+.form-select {
+	position: relative;
+}
+
+.form-select::after {
+	content: '▾';
+	font-family: arial, sans-serif;
+	font-size: 1.2em;
+	position: absolute;
+	top: 50%;
+	right: 0.2em;
+	transform: translateY(-50%);
+	pointer-events:none;
+	color: var(--color-neutral-medium);
+}
+
+
+/* TOGGLE */
+
+.toggle label {
+	font-size: 1.3em;
+	display: inline-block;
+	width: 2em;
+	height: 1em;
+	border: 0.1em solid var(--color-neutral-medium);
+	background-color: var(--color-neutral-light);
+	border-radius: 1em;
+	position: relative;
+}
+.toggle label::after {
+	content: '';
+	display: inline-block;
+	width: 0.8em;
+	height: 0.8em;
+	border-radius: 1em;
+	position: absolute;
+	background-color: var(--color-white);
+	transition: all 0.3s;
+}
+.toggle input:checked + label::after {
+	transform: translateX(1em);
+}
+
+/* FIGURE */
+
+.figure {
+	margin: 0;
+	background-color: var(--color-white);
+}
+.figure img {
+	width: 100%;
+	vertical-align: text-bottom;
+}
+.figure figcaption {
+	padding: 1em;
+}
+
+
+
 
 
 

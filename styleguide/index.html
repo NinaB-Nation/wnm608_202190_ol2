@@ -10,6 +10,10 @@
 	<link rel="stylesheet" href="../lib/css/gridsystem.css">
 	<link rel="stylesheet" href="../css/storetheme.css">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
@@ -34,25 +38,44 @@
 		<div class="card">
 			<nav class="nav toc">		
 				<ul>				
-					<li><a href="#typography">Typography</a></li>
-					<ul>		
-						<li><a href="#headings">Headings</a></li>
-						<li><a href="#paragraphs">Paragraphs</a></li>
-					</ul>	
+					<li>
+						<a href="#typography">Typography</a>
+						<ul>		
+							<li><a href="#headings">Headings</a></li>
+							<li><a href="#paragraphs">Paragraphs</a></li>
+						</ul>	
+					</li>
+							
 					<li><a href="#cards">Cards</a></li>
 					<li><a href="#viewwindow">View Window</a></li>
 					<li><a href="#navigations">Navigations</a></li>
 					<li><a href="#gridsystem">Grid System</a></li>
 					<li><a href="#tables">Tables</a></li>	
 					<li><a href="#colorpalette">Color Palette</a></li>
-					<li><a href="#forms">Forms</a></li>			
+					</li>	
+
+						<a href="#forms">Forms</a>	
 						<ul>
-						<li><a href="#inputs">Inputs</a></li>
-						<li><a href="#buttons">Buttons</a></li>					
+							<li><a href="#inputs">Inputs</a></li>
+							<li><a href="#labels">Labels</a></li>
+							<li><a href="#controls">Controls</a></li>
+							<li><a href="#buttons">Buttons</a></li>	
+							<li><a href="#hotdog">Hotdog</a></li>	
+							<li><a href="#select">Select</a></li>	
+							<li><a href="#checkboxes">Check Boxes</a></li>					
+						</ul>
+					<li>
+						<a href="#figures">Figures</a></li>
+						<ul>		
+							<li><a href="#basicfigure">Basic Figure</a></li>
+							<li><a href="#productfigure">Product Figure</a></li>
+							<li><a href="#overlayfigure">Overlay Figure</a></li>
 						</ul>	
-				</nav>
-			</div>
+					</li>
+				</ul>	
+			</nav>
 		</div>
+	</div>
 
 		<div class="container" id="typography">
 			<h2>Typography</h2>
@@ -346,8 +369,8 @@
 		<div class="container" id="forms">
 			<h2>Forms</h2>
 
-			<h3>Inputs</h3>
-
+			<h3 id="inputs">Inputs</h3>
+		
 			<div class="card soft">
 				<h3>Default Inputs</h3>
 				<form>
@@ -361,17 +384,63 @@
 					<input type="search">
 				</form>	
 
-				<h3>Form Input</h3>
+				<h3 id="inputs">Form Input</h3>
 				<form>
-					<input type="text" class="form-input">
-				</form>			
+					<input type="text" placeholder="Text" class="form-input">
+					<input type="number" placeholder="Number" class="form-input">
+					<input type="password" placeholder="Password" class="form-input">
+					<input type="search" placeholder="Search" class="form-input">
+				</form>	
+
+				<div class="container" id="labels">
+				<h3 id="labels">Labels</h3>
+				<form>
+					<label class="form-label">Example</label>
+					<input type="text" placeholder="Text" class="form-input">
+					<label class="form-label">Example</label>				
+					<input type="number" placeholder="Number" class="form-input">
+					<label class="form-label">Example</label>
+					<input type="password" placeholder="Password" class="form-input">
+					<label class="form-label">Example</label>
+					<input type="search" placeholder="Search" class="form-input">
+				</form>
+
+				<div class="container" id="controls">
+				<h3>Form Control</h3>
+				<form>
+					<div class="form-control">
+						<label class="form-label">Example</label>
+						<input type="text" placeholder="Text" class="form-input">
+					</div>
+					<div class="form-control">
+						<label class="form-label">Example</label>				
+						<input type="number" placeholder="Number" class="form-input">
+					</div>
+					<div class="form-control">	
+						<label class="form-label">Example</label>
+						<input type="password" placeholder="Password" class="form-input">
+					</div>
+					<div class="form-control display-flex flex-align-center">	
+						<div class="flex-none">
+							<label class="form-label">Example</label>
+						</div>	
+						<div class="flex-stretch">	
+							<input type="search" placeholder="Search" class="form-input">
+						</div>	
+						<div class="flex-none">
+							<label class="form-label">Example</label>
+						</div>	
+						<div class="flex-stretch">
+							<input type="search" placeholder="Search" class="form-input">
+						</div>
+					</div>
+				</form>	
+
 			</div>
-		</div>
 
+			<h2 id="buttons">Buttons</h2>
 
-		<h3>Buttons</h3>
-
-		<div class="card soft">
+			<div class="card soft">
 			<h3>Default Button</h3>
 
 			<button>Button</button>
@@ -388,8 +457,208 @@
 				<a href="#" class="form-button">Anchor</a>
 			</div>
 		</div>
+
+		
+		<h2 id="hotdog">Hotdog</h2>
+
+		<div class="card soft">
+			<div class="form-control">
+				<form>
+					<input type="search" class="hotdog" placeholder="Search">
+				</form>
+			</div>
+			<div class="form-control">
+				<form>
+					<input type="search" class="hotdog dark" placeholder="Search">
+				</form>
+			</div>
+			<div class="form-control">
+				<form class="card dark">
+					<input type="search" class="hotdog light" placeholder="Search">
+				</form>
+			</div>
+			<div class="form-control">
+				<form class="hotdog">
+					<span>&equiv;</span>
+					<input type="search" placeholder="Search">
+				</form>
+			</div>
+			<div class="form-control">
+				<form class="hotdog">
+					<input type="search" placeholder="Search">
+					<span>&equiv;</span>
+				</form>
+			</div>
+		</div>
+
+
+		<h2 id="select">Select</h2>
+
+		<div class="card soft">
+			<div class="form-select">
+			<select>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
+			</div>
+			<div class="display-flex">
+			<div class="flex-stretch"></div>
+			<div class="flex-none"></div>
+				<div class="form-select">
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+					</select>
+				</div>
+			</div>	
+		</div>
+
+		<h2 id="checkboxes">Check Boxes</h2>
+
+		<div class="card soft">
+			<h3>Basic Checkbox</h3>
+			<label>Label <input type="checkbox" id="input-1"></label>
+			<label for="input-1">Label</label>
+
+			<h3>Heart Checkbox</h3>
+			<div class="favorite">
+				<input type="checkbox" id="heart-example" class="hidden">
+				<label for="heart-example">&hearts;</label>
+			</div>
+		</div>
+	
+		<h2 id="toggle">Toggle</h2>
+
+			<div class="card">
+
+			<div class="toggle">
+			<input type="checkbox" id="toggle-1" class="hidden">
+			<label for="toggle-1"></label>
+		</div>
+		<div class="display-flex">
+			<div class="flex-none">
+				<label for="toggle-2">Display Warning?</label>
+			</div>
+			<div class="flex-stretch"></div>
+			<div class="flex-non">
+				<div class="toggle" style="font-size:2em">
+					<input type="checkbox" id="toggle-2" class="hidden">
+					<label for="toggle-2"></label>	
+				</div>
+			</div>	
+		</div>
 	</div>
 
+		<h2 id="figures">Figures</h2>
+
+		<div class="card">
+			<h3 id="basicfigure">Basic Figure</h3>
+
+			<figure class="figure">
+				<img src="https://placehold.co/400x400?text=product" alt="product">
+				<figcaption>Product</figcaption>
+			</figure>
+		</div>
+	</div>
+			<h3>Figure Grid</h3>
+
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>Product</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>Product</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>Product</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<h3 id="productfigure">Product Grid</h3>
+
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>							
+				</div>	
+			</div>
+			
+
+			<h3 id="overlayfigure">Product Overlay</h3>
+
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product-overlay">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div class="caption-body">
+								<div>Product Name</div>
+								<div>$3.99</div>
+							</div>	
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product-overlay">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div class="caption-body">
+								<div>Product Name</div>
+								<div>$3.99</div>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product-overlay">
+						<img src="https://placehold.co/400x400?text=product" alt="product">
+						<figcaption>
+							<div class="caption-body">
+								<div>Product Name</div>
+								<div>$3.99</div>
+							</div>
+						</figcaption>
+					</figure>							
+				</div>					
+			</div>
+		</div>
+	
 
 
 

@@ -24,3 +24,10 @@ Week 4:
 Week 5:
 
 - https://github.com/NinaB-Nation/wnm608_202190_ol2.git
+
+Week 6:
+
+- https://burucanation.com/aau/wnm608_202190_ol2/Buruca-Nation.Nina/styleguide/index.html
+- https://github.com/NinaB-Nation/wnm608_202190_ol2.git
+- PDF
+
